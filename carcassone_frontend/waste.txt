@@ -1,0 +1,71 @@
+
+                {/*/!* 合法放置点列表 *!/*/}
+                {/*{drawnTile && validPositions.length > 0 && (*/}
+                {/*    <div style={{*/}
+                {/*        marginTop: '40px',*/}
+                {/*        padding: '20px',*/}
+                {/*        backgroundColor: '#fafafa',*/}
+                {/*        border: '1px solid #ccc',*/}
+                {/*        borderRadius: '8px'*/}
+                {/*    }}>*/}
+                {/*        <h3>🎯 合法放置点</h3>*/}
+                {/*        <table style={{ width: '80%', margin: '20px auto', borderCollapse: 'collapse' }}>*/}
+                {/*            <thead>*/}
+                {/*            <tr>*/}
+                {/*                <th style={{ padding: '12px', textAlign: 'center' }}>🧭 坐标</th>*/}
+                {/*                <th style={{ padding: '12px', textAlign: 'center' }}>🔄 角度</th>*/}
+                {/*                <th style={{ padding: '12px', textAlign: 'center' }}>🎯 Meeple 信息</th>*/}
+                {/*                <th style={{ padding: '12px', textAlign: 'center' }}>🛠 操作</th>*/}
+                {/*            </tr>*/}
+                {/*            </thead>*/}
+                {/*            <tbody>*/}
+                {/*            {validPositions.map((pos, idx) => (*/}
+                {/*                <tr key={idx} style={{ borderBottom: '1px solid #ccc' }}>*/}
+                {/*                    <td style={{ textAlign: 'center', verticalAlign: 'middle', padding: '10px' }}>*/}
+                {/*                        ({pos.coord[0]}, {pos.coord[1]})*/}
+                {/*                    </td>*/}
+                {/*                    <td style={{ textAlign: 'center', verticalAlign: 'middle', padding: '10px' }}>*/}
+                {/*                        {(pos.rotation ?? 0) * 90}°*/}
+                {/*                    </td>*/}
+                {/*                    <td style={{ textAlign: 'center', verticalAlign: 'middle', padding: '10px' }}>*/}
+                {/*                        {pos.is_put ? (*/}
+                {/*                            <>*/}
+                {/*                                <div>🎯 Meeple: {pos.meepleType}</div>*/}
+                {/*                                <div>📍 前端位置: ({pos.frontend_coord[0]}, {pos.frontend_coord[1]})</div>*/}
+                {/*                            </>*/}
+                {/*                        ) : (*/}
+                {/*                            <div>🧍‍♂️ 不放 Meeple</div>*/}
+                {/*                        )}*/}
+                {/*                    </td>*/}
+                {/*                    <td style={{ textAlign: 'center', verticalAlign: 'middle', padding: '10px' }}>*/}
+                {/*                        <button*/}
+                {/*                            style={{*/}
+                {/*                                padding: '6px 12px',*/}
+                {/*                                borderRadius: '6px',*/}
+                {/*                                backgroundColor: '#a5d6a7',*/}
+                {/*                                border: '1px solid #388e3c',*/}
+                {/*                                cursor: 'pointer',*/}
+                {/*                                fontSize: '14px'*/}
+                {/*                            }}*/}
+                {/*                            onClick={() => handleTileAction({*/}
+                {/*                                type: 'place',*/}
+                {/*                                x: pos.coord[0],*/}
+                {/*                                y: pos.coord[1],*/}
+                {/*                                rotation: pos.rotation ?? 0,*/}
+                {/*                                meeple: pos.is_put ? {*/}
+                {/*                                    featureType: pos.featureType,*/}
+                {/*                                    featureId: pos.featureId,*/}
+                {/*                                    meepleType: pos.meepleType,*/}
+                {/*                                    frontendCoord: pos.frontend_coord*/}
+                {/*                                } : undefined*/}
+                {/*                            })}*/}
+                {/*                        >*/}
+                {/*                            ✅ 放置*/}
+                {/*                        </button>*/}
+                {/*                    </td>*/}
+                {/*                </tr>*/}
+                {/*            ))}*/}
+                {/*            </tbody>*/}
+                {/*        </table>*/}
+                {/*    </div>*/}
+                {/*)}*/}

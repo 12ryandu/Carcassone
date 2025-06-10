@@ -1,0 +1,2424 @@
+[
+  {
+    "id": 1747540282275,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          6,
+          7
+        ],
+        "hasShield": true,
+        "hasDouble": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747540695979,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ],
+        "hasShield": true,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747541544009,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          4,
+          5
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747541545336,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          4
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+
+  {
+    "id": 1747541545480,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          6,
+          7
+        ],
+        "hasShield": true,
+        "hasDouble": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+
+  {
+    "id": 1747541545633,
+    "features": [
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "hasShield": true,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747541545793,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747541773725,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          3
+        ],
+        "hasInn": false
+      }
+
+    ]
+  },
+  {
+    "id": 1747541841411,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747541873515,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747541897083,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          2,
+          3,
+          6,
+          7
+        ],
+        "hasShield": true,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747541926107,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          7,
+          6,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747541971358,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747542390302,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747542439724,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747542514290,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747542528610,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747542529082,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747542529482,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747542529642,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          3,
+          4,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747542530090,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747542530226,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747542770652,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          7,
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747542812250,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747542812586,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1747542812866,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747542812994,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          3
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747542813130,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747542813226,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747544034527,
+    "features": [
+      {
+        "name": "GardenFeature",
+        "connectedEdges": []
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747544114254,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747544175911,
+    "features": [
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          3
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1747544176048,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          7,
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544176206,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          7,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544176341,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544176470,
+    "features": [
+      {
+        "name": "GardenFeature",
+        "connectedEdges": []
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          4,
+          5
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747544176576,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "GardenFeature",
+        "connectedEdges": []
+      }
+    ]
+  },
+  {
+    "id": 1747544176718,
+    "features": [
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544176854,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544506159,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "GardenFeature",
+        "connectedEdges": []
+      }
+    ]
+  },
+  {
+    "id": 1747544506311,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "GardenFeature",
+        "connectedEdges": []
+      }
+    ]
+  },
+  {
+    "id": 1747544506439,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1747544506575,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747544506695,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747544506823,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          7,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544506943,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544507071,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          7,
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544507207,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544507336,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CloisterFeature"
+      }
+    ]
+  },
+  {
+    "id": 1747544507455,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "hasShield": true,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747544507583,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1747544507727,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CloisterFeature"
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544507855,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          7,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544949658,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          7,
+          6,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "GardenFeature",
+        "connectedEdges": []
+      }
+    ]
+  },
+  {
+    "id": 1747544949802,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544949956,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CloisterFeature"
+      }
+    ]
+  },
+  {
+    "id": 1747544950098,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          7,
+          6,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544950228,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          7,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544950386,
+    "features": [
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ],
+        "hasShield": true,
+        "hasDouble": false
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544950522,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          2,
+          3,
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747544950658,
+    "features": [
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          2,
+          3
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "GardenFeature",
+        "connectedEdges": []
+      }
+    ]
+  },
+  {
+    "id": 1747544950797,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CloisterFeature"
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544950922,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544951066,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747544951195,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CloisterFeature"
+      }
+    ]
+  },
+  {
+    "id": 1747544951330,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          2,
+          3,
+          6,
+          7
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747544951434,
+    "features": [
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "hasShield": true,
+        "hasDouble": false
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "GardenFeature",
+        "connectedEdges": []
+      }
+    ]
+  },
+  {
+    "id": 1747546514057,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ],
+        "hasShield": true,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747546514193,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          7,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          2
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          3
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747546514329,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          2,
+          7
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          1,
+          3
+        ],
+        "hasInn": false
+      },
+      {
+        "name": "CityFeature",
+        "connectedEdges": [
+          0,
+          1
+        ],
+        "hasShield": false,
+        "hasDouble": false
+      }
+    ]
+  },
+  {
+    "id": 1747546514484,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          7,
+          6,
+          5
+        ]
+      },
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "RoadFeature",
+        "connectedEdges": [
+          0,
+          2
+        ],
+        "hasInn": false
+      }
+    ]
+  },
+  {
+    "id": 1747546514618,
+    "features": [
+      {
+        "name": "FieldFeature",
+        "connectedEdges": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "CloisterFeature"
+      }
+    ]
+  }
+]

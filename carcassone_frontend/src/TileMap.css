@@ -1,0 +1,200 @@
+/* ==========================================
+   🌍 主容器与页面结构
+   ========================================== */
+
+   .tile-map-container {
+    padding: 40px;
+}
+
+.tile-map-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.tile-map-controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tile-map-controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tile-map-controls button:hover {
+    background-color: #1976D2;
+}
+
+/* ==========================================
+   🧩 Tile 地图区域
+   ========================================== */
+
+.tile-map-board {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+}
+
+.tile-img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform-origin: center;
+    border: 1px solid #aaa;
+}
+
+@keyframes wiggle {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(3deg); }
+    50%  { transform: rotate(-3deg); }
+    75%  { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.wiggle {
+    animation: wiggle 0.8s ease-in-out infinite;
+}
+
+
+
+/* ==========================================
+   🎴 当前摸到的牌（预览）
+   ========================================== */
+
+.drawn-tile-preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.drawn-tile-preview img {
+    width: 100px;
+    margin-top: 10px;
+}
+
+.drawn-tile-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.drawn-tile-box {
+    text-align: center;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    background-color: #fefefe;
+}
+
+@keyframes floatingSmall {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0px); }
+}
+
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ==========================================
+   🧑‍🤝‍🧑 左侧 Feature 面板中的玩家信息（如存在）
+   ========================================== */
+
+.player-sidebar {
+    width: 220px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-left: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+.player-entry {
+    transition: all 0.3s ease;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.player-entry.highlight-current {
+    transform: scale(1.05) skewX(-5deg);
+    background-color: #fff6d6;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    z-index: 2;
+    position: relative;
+    border: 2px solid #f0c36d;
+}
+
+
+.player-score {
+    font-weight: bold;
+    margin-right: 6px;
+    color: #333;
+}
+
+.player-name {
+    font-weight: 500;
+    margin-right: 6px;
+}
+
+.player-meeples {
+    margin-top: 8px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.highlight-current {
+    background-color: #fff8e1;
+    border-left: 4px solid orange;
+  }
+  
+
+/* ==========================================
+   🎯 Meeple 图标展示样式（通用）
+   ========================================== */
+
+.meeple-3d {
+    width: 40px;
+    height: 40px;
+    transform: perspective(100px) rotateX(10deg) rotateY(-10deg);
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.4));
+    transition: transform 0.2s ease;
+}
+
+.meeple-3d:hover {
+    transform: perspective(100px) rotateX(0deg) rotateY(0deg) scale(1.05);
+}
+
+/* ==========================================
+   📌 固定在右上角的浮动玩家面板（新版推荐）
+   ========================================== */
+
+.fixed-player-panel {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 220px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+
