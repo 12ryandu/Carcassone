@@ -43,6 +43,16 @@ WHOLE_DIRECTIONS = [
     (-1,  1), (0,  1), (1,  1)
 ]
 
+@dataclass
+class ScoringEvent:
+    FeatureId: int
+    FeatureType: str
+    Players: List[Player] = field(default_factory=list)
+    MeepleReturned: List[Meeple] = field(default_factory=list)
+    Score: int = 0
+
+
+
 
 @dataclass
 class FeatureGroup:
@@ -55,6 +65,7 @@ class FeatureGroup:
     meeples: List[Meeple]  # 所有放置在该 feature 上的 meeple
     open_edges: List[Tuple[Tuple[int, int], int]] = field(default_factory=list)
     tags: Set[str] = field(default_factory=set)
+    scored: bool = False
 
 
 @dataclass
@@ -82,7 +93,8 @@ class GameBoard:
             "RoadFeature": {},
             "CityFeature": {},
             "FieldFeature": {},
-            "CloisterFeature": {}
+            "CloisterFeature": {},
+            "GardenFeature": {}
         }
         self.players = []
         self.init_players(player_num)
@@ -758,13 +770,6 @@ class GameBoard:
             print(f"📊 当前 {feature.type} 全部 IDs: {all_ids}")
             print("========================================================\n")
 
-    def scoring_feature(self, feature_id: int, feature_type: str):
-        if feature_type == "RoadFeature":
-            score = 1 * len(self.meta_features[feature_type][feature_id].tiles)
-            return score
-        if feature_type == "CityFeature":
-            score = 2 * len(self.meta_features[feature_type][feature_id].tiles)
-            return score
 
     def get_current_state(self, coord: Coord):
         round_report = RoundReport()
@@ -848,7 +853,7 @@ class GameBoard:
         # 这里要加一个去除相邻的clo的空边
         for feature in tile.features:
             fg = self.meta_features[feature.type][feature.id]
-            if feature.type == "CloisterFeature":
+            if feature.type == "CloisterFeature" or feature.type == "GardenFeature":
                 for nx, ny in WHOLE_DIRECTIONS:
                     if self.board.get((nx, ny)) is None:
                         fg.open_edges.append(((nx, ny), -1))
@@ -875,24 +880,183 @@ class GameBoard:
                 if neighbor is None:
                     fg.open_edges.append(((coord[0], coord[1]), neighbor_edge))
 
+    def scoring(self, coord: Coord, game_ended: bool = False) -> List[ScoringEvent]:
+        print(f"\n🧮 [评分触发] 坐标: {coord}, 游戏结束: {game_ended}")
 
-
-
-    def scoring(self, coord: Coord):
         tile = self.current_tile or self.get_tile_by_coord(coord[0], coord[1])
         if tile is None:
-            return "no tile found"
-        score_result = []
-        for feature in tile.features:
-            if feature.type == "RoadFeature" and len(self.meta_features[feature.type][feature.id].open_edges) == 0 :
-                print("开始计算分数")
-                fg = self.meta_features[feature.type][feature.id]
-                for coord,edges in fg.tiles.items():
-                    tile = self.get_tile_by_coord(coord[0], coord[1])
-                    for f in tile.features:
-                        if f.id == feature.id and :
+            print("❌ 找不到 tile，返回空结果")
+            return ["no tile found"]
 
-                score_result.append()
+        score_result = []
+
+        for feature in tile.features:
+            if feature.type not in self.meta_features or feature.id not in self.meta_features[feature.type]:
+                continue
+            fg = self.meta_features[feature.type][feature.id]
+            if fg.scored:
+                continue
+
+            if feature.type == "RoadFeature" and (len(fg.open_edges) == 0 or game_ended):
+                print(f"➡️ 检测 RoadFeature ID={feature.id}，开始计算")
+
+                base_score = len(fg.tiles)
+                if game_ended and "hasInn" in fg.tags:
+                    total_score = 0
+                else:
+                    score_multiplier = 2 if "hasInn" in fg.tags and not game_ended else 1
+                    total_score = base_score * score_multiplier
+
+                print(f"🧱 Road 长度={base_score}, tags={fg.tags}, 得分={total_score}")
+
+                meeples = []
+                players = set()
+                for coord in fg.tiles.keys():
+                    tile = self.get_tile_by_coord(coord[0], coord[1])
+                    if tile is None:
+                        continue
+                    for f in tile.features:
+                        if f.type == feature.type and f.id == feature.id:
+                            if not hasattr(f, 'meeples'):
+                                f.meeples = []
+                            for meeple in f.meeples:
+                                meeples.append(meeple)
+                                try:
+                                    players.add(self.players[[p.name for p in self.players].index(meeple.owner)])
+                                except ValueError:
+                                    print(f"⚠️ 未能匹配到 Meeple 所属玩家：{meeple.owner}")
+
+                print(f"👥 玩家：{[p.name for p in players]}, Meeples 数量：{len(meeples)}")
+
+                scoring_event = ScoringEvent(
+                    FeatureId=feature.id,
+                    FeatureType=feature.type,
+                    Players=list(players),
+                    MeepleReturned=meeples if not game_ended else [],
+                    Score=total_score
+                )
+                fg.scored = True
+                score_result.append(scoring_event)
+
+            elif feature.type == "CityFeature" and (len(fg.open_edges) == 0 or game_ended):
+                print(f"🏰 检测 CityFeature ID={feature.id}，开始计算")
+
+                base_score = 2 * len(fg.tiles) if not game_ended else len(fg.tiles)
+                shield_count = sum(1 for t_coord in fg.tiles.keys()
+                                   for f in self.get_tile_by_coord(t_coord[0], t_coord[1]).features
+                                   if f.type == feature.type and f.id == feature.id and "hasShield" in fg.tags)
+                base_score += 2 * shield_count if not game_ended else shield_count
+                if game_ended and "hasCathedral" in fg.tags:
+                    total_score = 0
+                else:
+                    score_multiplier = 3 if "hasCathedral" in fg.tags and not game_ended else 1
+                    total_score = base_score * score_multiplier
+
+                print(f"🏙️ City 大小={len(fg.tiles)}, shields={shield_count}, tags={fg.tags}, 得分={total_score}")
+
+                meeples = []
+                player_meeple_count = {}
+                for coord in fg.tiles.keys():
+                    tile = self.get_tile_by_coord(coord[0], coord[1])
+                    if tile is None:
+                        continue
+                    for f in tile.features:
+                        if f.type == feature.type and f.id == feature.id:
+                            if not hasattr(f, 'meeples'):
+                                f.meeples = []
+                            for meeple in f.meeples:
+                                meeples.append(meeple)
+                                player_meeple_count[meeple.owner] = player_meeple_count.get(meeple.owner, 0) + (
+                                    2 if meeple.type == "big" else 1)
+
+                if player_meeple_count:
+                    max_meeples = max(player_meeple_count.values())
+                    majority_players = [self.players[[p.name for p in self.players].index(owner)]
+                                        for owner, count in player_meeple_count.items() if count == max_meeples]
+                else:
+                    majority_players = []
+
+                print(f"👑 控制玩家：{[p.name for p in majority_players]}, Meeples 总数：{len(meeples)}")
+
+                scoring_event = ScoringEvent(
+                    FeatureId=feature.id,
+                    FeatureType=feature.type,
+                    Players=majority_players,
+                    MeepleReturned=meeples if not game_ended else [],
+                    Score=total_score
+                )
+                fg.scored = True
+                score_result.append(scoring_event)
+
+        x, y = coord
+        surrounding_coords = [(x + dx, y + dy) for dx, dy in WHOLE_DIRECTIONS]
+        for nx, ny in surrounding_coords:
+            neighbor_tile = self.get_tile_by_coord(nx, ny)
+            if neighbor_tile is None:
+                continue
+            for neighbor_feature in neighbor_tile.features:
+                if neighbor_feature.type not in ["CloisterFeature", "GardenFeature"]:
+                    continue
+                if neighbor_feature.id not in self.meta_features[neighbor_feature.type]:
+                    continue
+                neighbor_fg = self.meta_features[neighbor_feature.type][neighbor_feature.id]
+                if neighbor_fg.scored:
+                    continue
+
+                neighbor_surrounding = [(nx + dx, ny + dy) for dx, dy in [
+                    (-1, -1), (0, -1), (1, -1),
+                    (-1, 0), (0, 0), (1, 0),
+                    (-1, 1), (0, 1), (1, 1)
+                ]]
+                filled_count = sum(
+                    1 for cx, cy in neighbor_surrounding if self.get_tile_by_coord(cx, cy) is not None)
+                if filled_count == 9 or (game_ended and filled_count > 0):
+                    print(f"🌸 检测 {neighbor_feature.type} @({nx},{ny})，填充数={filled_count}，开始计算")
+
+                    total_score = 9 if filled_count == 9 else filled_count if game_ended else 0
+
+                    meeples = []
+                    players = set()
+                    for f in neighbor_tile.features:
+                        if f.type == neighbor_feature.type and f.id == neighbor_feature.id:
+                            if not hasattr(f, 'meeples'):
+                                f.meeples = []
+                            for meeple in f.meeples:
+                                meeples.append(meeple)
+                                try:
+                                    players.add(self.players[[p.name for p in self.players].index(meeple.owner)])
+                                except ValueError:
+                                    print(f"⚠️ 未能匹配到 Meeple 所属玩家：{meeple.owner}")
+
+                    scoring_event = ScoringEvent(
+                        FeatureId=neighbor_feature.id,
+                        FeatureType=neighbor_feature.type,
+                        Players=list(players),
+                        MeepleReturned=meeples if not game_ended else [],
+                        Score=total_score
+                    )
+                    neighbor_fg.scored = True
+                    score_result.append(scoring_event)
+
+        for scoring_event in score_result:
+            if scoring_event.Score > 0 and scoring_event.Players:
+                points_per_player = scoring_event.Score // len(scoring_event.Players)
+                print(
+                    f"📊 准备分配 {scoring_event.Score} 分 -> 平分给 {len(scoring_event.Players)} 位玩家，每人 {points_per_player} 分")
+                for player in scoring_event.Players:
+                    player.score += points_per_player
+                    print(f"🏆 玩家 {player.name} 获得 {points_per_player} 分，总分：{player.score}")
+                self.round_manager.round_report.add_event(Event(
+                    type="FeatureScored",
+                    payload={
+                        "feature_type": scoring_event.FeatureType,
+                        "feature_id": scoring_event.FeatureId,
+                        "score": scoring_event.Score,
+                        "players": [p.name for p in scoring_event.Players]
+                    }
+                ))
+
+        return score_result
 
 
 

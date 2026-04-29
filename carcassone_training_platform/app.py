@@ -1,6 +1,10 @@
+from audioop import error
+from dataclasses import asdict
+
+from exceptiongroup import catch
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from env.board import GameBoard
+from env.board import GameBoard, ScoringEvent
 import json
 import os
 from env.config import TILE_STORE
@@ -197,9 +201,60 @@ def valid_positions_without_meeples():
 # ---------------------------------------------
 # ✅ 放置 tile 逻辑
 # ---------------------------------------------
+import logging
 
+# 配置日志（可选，推荐替换 print）
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+@app.route("/api/score", methods=["POST"])
+def score():
+    try:
+        # 获取 JSON 数据
+        data = request.get_json()
+        if not data:
+            logger.debug("❌ 接收到空 JSON 数据")
+            return jsonify({"status": "error", "message": "No JSON data provided"}), 400
+
+        # 验证 x, y
+        if "x" not in data or "y" not in data:
+            logger.debug("❌ JSON 数据缺少 x 或 y 坐标: %s", data)
+            return jsonify({"status": "error", "message": "Missing x or y coordinate"}), 400
+
+        x = int(data["x"])
+        y = int(data["y"])
+        coord = (x, y)
+        logger.debug("📍 接收到坐标: %s", coord)
+
+        # 调用 scoring
+        logger.debug("🔍 调用 board.scoring(%s)", coord)
+        result = board.scoring(coord)
+        logger.debug("✅ scoring 返回结果: %s", result)
+
+        if result == ["no tile found"]:
+            logger.debug("⚠️ 无板块在坐标 %s", coord)
+            return jsonify({"status": "error", "message": "No tile found at coordinate"}), 404
+
+        # 返回结果
+        logger.debug("🎉 成功计分，当前玩家: %s", board.round_manager.get_current_player().player_id)
+        return jsonify({
+            "status": "ok",
+            "current_player": board.round_manager.get_current_player().player_id
+        }), 200
+
+    except ValueError as e:
+        logger.error("❌ 坐标转换错误: %s", str(e))
+        return jsonify({"status": "error", "message": f"Invalid coordinate: {str(e)}"}), 400
+    except KeyError as e:
+        logger.error("❌ JSON 缺少键: %s", str(e))
+        return jsonify({"status": "error", "message": f"Missing key: {str(e)}"}), 400
+    except Exception as e:
+        logger.error("❌ 意外错误: %s", str(e), exc_info=True)  # exc_info=True 包含堆栈跟踪
+        return jsonify({"status": "error", "message": f"Unexpected error: {str(e)}"}), 500
 @app.route("/api/get_update", methods=["POST"])
 def get_update():
+    board.round_manager.next_player()
+
     try:
         # 直接序列化当前回合的增量事件
         report_data = board.round_manager.round_report.serialize()
@@ -212,7 +267,6 @@ def get_update():
     except Exception as e:
         print("❌ 出现错误:", e)
         return jsonify({"status": "error", "message": str(e)}), 500
-
 
 
 
