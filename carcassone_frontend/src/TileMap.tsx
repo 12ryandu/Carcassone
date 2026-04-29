@@ -62,7 +62,7 @@ const TileMap: React.FC = () => {
     const [placementPhase, setPlacementPhase] = useState<"idle"| "draw" | "tile" | "meeple" | "score" | "event" >( "idle" );
     const [meepleOptions, setMeepleOptions] = useState<MeepleInfo[]>([]);
     const [activeHintKey, setActiveHintKey] = useState<string | null>(null);
-
+    const [lastPlacedCoord, setLastPlacedCoord] = useState<{x: number, y: number} | null>(null);
 
 
     interface SelectedPosition {
@@ -265,6 +265,11 @@ const TileMap: React.FC = () => {
                     meeples: []
                 }
             ]);
+            setLastPlacedCoord({
+                x: selectedPosition.coord[0],
+                y: selectedPosition.coord[1]
+            });
+            console.log(`📍 更新最新放置坐标：(${selectedPosition.coord[0]}, ${selectedPosition.coord[1]})`);
 
             // ✅ 重新计算地图范围
             setMinX(prev => Math.min(prev, selectedPosition.coord[0] - 1));
@@ -362,18 +367,68 @@ const TileMap: React.FC = () => {
         transformOrigin: 'center',
         border: '1px solid #ccc'
     });
+    const skipMeeplePlacement = () => {
+        console.log("❌ 点击红叉，跳过 Meeple 放置");
+        setPlacementPhase("score");
+        handleScore();
+    };
 
-    const handleScore = () => {
-
+    const handleScore = async () => {
         try {
-            console.log("这里先计数，但是捏，后面再写这个逻辑捏")
-            setPlacementPhase("event")
-            handleEvent()
-        }catch (error){
-            console.error("❌ 网络请求失败:", error);
-            alert("❌ 网络请求失败");
+            // 验证 lastPlacedCoord
+            if (!lastPlacedCoord) {
+                console.log("❌ 无最新放置坐标");
+                alert("无法计分：未找到最新放置的板块");
+                return;
+            }
+
+            console.log(`📊 发送计分请求，坐标：(${lastPlacedCoord.x}, ${lastPlacedCoord.y})`);
+
+            // 发送 POST 请求到 /api/score
+            const response = await fetch('http://localhost:5000/api/score', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    x: lastPlacedCoord.x,
+                    y: lastPlacedCoord.y,
+                }),
+            });
+
+            // 检查 HTTP 状态
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || `HTTP error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 记录响应
+            console.log("✅ 计分响应：", data);
+
+            // 处理响应
+            if (data.status !== 'ok') {
+                console.error(`❌ 计分失败：${data.message}`);
+                alert(`计分失败：${data.message}`);
+                return;
+            }
+
+            // 更新当前玩家（如果需要）
+            if (data.current_player) {
+                console.log(`🎮 当前玩家：${data.current_player}`);
+                setCurrentPlayerIndex(data.current_player); // 假设有此状态
+            }
+
+            // 切换阶段并触发事件
+            setPlacementPhase('event');
+            await handleEvent(); // 确保 await，因为 handleEvent 是 async
+
+        } catch (error) {
+            // 安全处理错误（修复 TS18046）
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            console.error("❌ 计分失败:", errorMessage);
+            alert(`计分失败：${errorMessage}`);
         }
-    }
+    };
 
     const handleEvent = async () => {
         try {
@@ -766,6 +821,31 @@ const TileMap: React.FC = () => {
                                         ))}
                                     </div>
                                 )}
+                                {/* 红叉按钮在 Tile 外侧左上角 */}
+                                <div
+                                    style={{
+                                        position: 'absolute',
+                                        top: `${(coord[1] - minY) * tileSize - 20 }px`, // 外侧左上角，向上偏移 10px
+                                        left: `${(coord[0] - minX) * tileSize - 30 }px`, // 外侧左上角，向左偏移 10px
+                                        zIndex: 20, // 低于米宝箭头 (zIndex: 50)，避免遮挡
+                                    }}
+                                >
+                                    <span
+                                        onClick={skipMeeplePlacement}
+                                        style={{
+                                            margin: '4px',
+                                            padding: '6px 10px', // 保留内边距以确保点击区域
+                                            fontSize: '16px', // 调整字体大小，使 ❌ 更突出
+                                            color: '#f44336', // 红色文字，替代背景
+                                            cursor: 'pointer',
+                                            userSelect: 'none',
+                                            backgroundColor: 'transparent', // 透明背景
+                                            border: 'none', // 移除边框
+                                        }}
+                                    >
+                                        ❌
+                                    </span>
+                                </div>
                             </React.Fragment>
                         );
                     })}
